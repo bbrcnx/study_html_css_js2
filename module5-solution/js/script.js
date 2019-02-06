@@ -101,9 +101,7 @@ function buildAndShowHomeHTML (categories) {
       // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
       // variable's name implies it expects.
-      // var chosenCategoryShortName = ....
       var chosenCategoryShortName = chooseRandomCategory(categories);
-      console.log("short name" + chosenCategoryShortName);
 
 
       // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
@@ -117,13 +115,10 @@ function buildAndShowHomeHTML (categories) {
       // Hint: you need to surround the chosen category short name with something before inserting
       // it into the home html snippet.
       //
-      // var homeHtmlToInsertIntoMainPage = ....
       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml,
                      "randomCategoryShortName",
                      "'"+chosenCategoryShortName.short_name+"'"
                      );
-      console.log("homehtmltomainpage " + homeHtmlToInsertIntoMainPage);
-
 
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
@@ -131,7 +126,6 @@ function buildAndShowHomeHTML (categories) {
       // of how to do that.
       // ....
       insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
-
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
 }
@@ -140,10 +134,8 @@ function buildAndShowHomeHTML (categories) {
 // Given array of category objects, returns a random category object.
 function chooseRandomCategory (categories) {
   // Choose a random index into the array (from 0 inclusively until array length (exclusively))
-  console.log("choooserandomcategory imside");
-  console.log(categories);
   var randomArrayIndex = Math.floor(Math.random() * categories.length);
-  console.log("categories[randomArrayIndex] short_name " + categories[randomArrayIndex].short_name);
+
   // return category object with that randomArrayIndex
   return categories[randomArrayIndex];
 }
